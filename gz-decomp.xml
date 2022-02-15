@@ -1,0 +1,19 @@
+<tool id="gz-decomp" name="Gzip decompress" version="0.1.0">
+    <!-- <requirements>
+        <requirement></requirement>
+    </requirements> -->
+    <command detect_errors="exit_code"><![CDATA[
+        bash '$__tool_directory__/gz-decomp.sh' $input1 $output1
+    ]]></command>
+    <inputs>
+        <param type="data" name="input1" format="zip" />
+    </inputs>
+    <outputs>
+        <!-- <data format="tabular" type="data" name="output" label="$input.display_name freq filtered" /> -->
+        <data format="zip" name="output1" label="$input1.display_name fastq.zip" />
+    </outputs>
+    <help><![CDATA[
+        Use "Gzip decompress" to convert a zip archive of gzip compressed fastq-files
+        (fastq.gz.zip) to a zip archive of fastq (fastq.zip)
+    ]]></help>
+</tool>
