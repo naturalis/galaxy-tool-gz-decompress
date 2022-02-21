@@ -25,11 +25,24 @@ then
         zip -q $outlocation/output/out.zip $filepick_fastq
         mv $outlocation/output/out.zip $2
         rm -r $outlocation
+    elif [[ $extension2 == "fasta.gz" ]]
+    then
+        for file in $(ls -1d $outlocation/output/*.gz)
+        do
+            gunzip $file
+        done
+        # create zip from fasta
+        filepick_fasta=$(ls -1d $outlocation/output/*.fasta)
+        zip -q $outlocation/output/out.zip $filepick_fasta
+        mv $outlocation/output/out.zip $2
+        rm -r $outlocation        
     else
-        echo "this archive contains no fastq.gz's"
+        printf "this archive contains no fasta/fastq.gz's" >&2
+        exit 1
     fi
 else
-    echo "this archive contains no gz's"
+    printf "this archive contains no gz's" >&2
+    exit 1
 fi
 
 zipinfo $2

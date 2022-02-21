@@ -9,11 +9,10 @@
         <param type="data" name="input1" format="zip" />
     </inputs>
     <outputs>
-        <!-- <data format="tabular" type="data" name="output" label="$input.display_name freq filtered" /> -->
-        <data format="zip" name="output1" label="$input1.display_name fastq.zip" />
+        <data format="zip" name="output1" label= "Gunzip_$input1.display_name" />
     </outputs>
     <help><![CDATA[
-        Use "Gzip decompress" to convert a zip archive of gzip compressed fastq-files
-        (fastq.gz.zip) to a zip archive of fastq (fastq.zip)
+        | Use "Gzip decompress" to convert a zip archive of gzip compressed fasta/fastq-files (fasta/fastq.gz.zip)
+        | to a zip archive of fasta/fastq (fasta/fastq.zip)
     ]]></help>
 </tool>
