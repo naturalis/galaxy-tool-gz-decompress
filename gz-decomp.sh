@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+printf "Conda env: $CONDA_DEFAULT_ENV\n"
+printf "Python version: $(python --version)\n"
+printf "Bash version: ${BASH_VERSION}\n\n"
+
 outlocation=$(mktemp -d /media/GalaxyData/database/files/XXXXXX)
 SCRIPTDIR=$(dirname "$(readlink -f "$0")")
 
