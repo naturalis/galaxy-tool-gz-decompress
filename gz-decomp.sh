@@ -9,7 +9,7 @@ SCRIPTDIR=$(dirname "$(readlink -f "$0")")
 
 #extension=$(zipinfo -1 $1 | tail -n+2 | sort -n | awk -F"." '{print $NF}' | sort -n | uniq)
 extension=$(zipinfo -1 $1 | egrep \.gz$ | awk -F"." '{print $NF}' | uniq)
-filepick=$(zipinfo -1 $1 | egrep \.gz)
+filepick=$(zipinfo -1 $1 | egrep \.gz$)
 
 # check for gz
 if [[ $extension == "gz" ]]
@@ -26,7 +26,8 @@ then
         done
         # create zip from fastq
         filepick_fastq=$(ls -1d $outlocation/output/*.fastq)
-        zip -q $outlocation/output/out.zip $filepick_fastq
+        # printf "\nfilepick:\n$filepick_fastq\n"
+        zip -q -j $outlocation/output/out.zip $filepick_fastq
         mv $outlocation/output/out.zip $2
         rm -r $outlocation
     elif [[ $extension2 == "fasta.gz" ]]
@@ -37,7 +38,8 @@ then
         done
         # create zip from fasta
         filepick_fasta=$(ls -1d $outlocation/output/*.fasta)
-        zip -q $outlocation/output/out.zip $filepick_fasta
+        # printf "\nfilepick:\n$filepick_fasta\n"
+        zip -q -j $outlocation/output/out.zip $filepick_fasta
         mv $outlocation/output/out.zip $2
         rm -r $outlocation        
     else
@@ -49,6 +51,7 @@ else
     exit 1
 fi
 
+printf "zip log:\n"
 zipinfo $2
 
 echo ""
