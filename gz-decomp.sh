@@ -4,7 +4,7 @@ printf "Conda env: $CONDA_DEFAULT_ENV\n"
 printf "Python version: $(python --version)\n"
 printf "Bash version: ${BASH_VERSION}\n\n"
 
-outlocation=$(mktemp -d /media/GalaxyData/database/files/XXXXXX)
+outlocation=$(mktemp -d /data/files/XXXXXX)
 SCRIPTDIR=$(dirname "$(readlink -f "$0")")
 
 #extension=$(zipinfo -1 $1 | tail -n+2 | sort -n | awk -F"." '{print $NF}' | sort -n | uniq)
