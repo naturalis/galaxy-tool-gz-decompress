@@ -2,6 +2,7 @@
 
 printf "Conda env: $CONDA_DEFAULT_ENV\n"
 printf "Python version: $(python --version)\n"
+printf "Unzip version: $(unzip -v | head -n1 | awk '{print $1,$2}')\n"
 printf "Bash version: ${BASH_VERSION}\n\n"
 
 outlocation=$(mktemp -d /data/files/XXXXXX)
