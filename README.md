@@ -10,7 +10,7 @@ Make sure the script is executable:
 `chmod 755 galaxy-tool-gz-decompress/gz-decomp.sh`  
 
 Append the file ***tool_conf.xml***:    
-`<tool file="/home/galaxy/Tools/galaxy-tool-gz-decompress/gz-decomp.xml" />`  
+`<tool file="/path/to/Tools/galaxy-tool-gz-decompress/gz-decomp.xml" />`  
 
 ### Ansible
 Depending on your setup the [ansible.builtin.git](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html) module could be used.  
