@@ -1,7 +1,9 @@
-<tool id="gz-decomp" name="Gzip decompress" version="0.1.0">
-    <!-- <requirements>
-        <requirement></requirement>
-    </requirements> -->
+<tool id="gz_decomp" name="Gzip decompress" version="0.1.0">
+
+    <requirements>
+        <requirement type="package" version="6.0">unzip</requirement>
+    </requirements>
+
     <command detect_errors="exit_code"><![CDATA[
         bash '$__tool_directory__/gz-decomp.sh' $input1 $output1
     ]]></command>
