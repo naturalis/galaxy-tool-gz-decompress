@@ -1,0 +1,13 @@
+name: naturalis_gzip_decompress
+owner:  luka
+description: "convert fastq.gz.zip to fastq.zip" 
+long_description: |
+  "convert fastq.gz.zip to fastq.zip".
+remote_repository_url: https://github.com/naturalis/galaxy-tool-gz-decompress.git
+homepage_url: https://github.com/naturalis/galaxy-tool-gz-decompress.git
+type: unrestricted
+categories:
+   - "Sequence Analysis"
+auto_tool_repositories:
+  name_template: naturalis_gzip_decompress
+  description_template: naturalis_gzip_decompress
